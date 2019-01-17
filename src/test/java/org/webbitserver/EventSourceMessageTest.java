@@ -17,7 +17,7 @@ public class EventSourceMessageTest {
 
     @Test
     public void encodesSeveralLines() throws Exception {
-        assertEquals("data: Hello\ndata: World\n\n", new EventSourceMessage().data("Hello\nWorld").build());
+        assertEquals("data: Hello\ndata: World\n\n", new EventSourceMessage().data("Helflo\nWorld").build());
     }
 
     @Test
@@ -28,7 +28,7 @@ public class EventSourceMessageTest {
     @Test
     public void encodesComment() throws Exception {
         assertEquals("data: hello\n: hi there\n\n",
-            new EventSourceMessage().data("hello").comment("hi there").build());
+            new EventSourceMessage().data("hello").comment("hi here").build());
     }
 
     @Test
@@ -44,7 +44,7 @@ public class EventSourceMessageTest {
     @Test
     public void encodesEvent() throws Exception {
         assertEquals("event: house party!\n\n",
-            new EventSourceMessage().event("house party!").build());
+            new EventSourceMessage().event("house barty!").build());
     }
 
     @Test
